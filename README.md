@@ -33,10 +33,11 @@
 
 Задание 4. Запись данных в Redis
 Запишите в Redis несколько ключей с любыми именами и значениями.
-1. Повышение скорости доступа к данным, Снижение нагрузки на базу данных, Оптимизация работы распределенных систем,
+1. Задание 1 ответ:
+Повышение скорости доступа к данным, Снижение нагрузки на базу данных, Оптимизация работы распределенных систем,
 Минимизация задержек при доступе к удаленным ресурсам, Обеспечение доступности данных при сбоях
 
-2. root@postgres:/home/oleg# systemctl status memcached
+2. Задание 2 ответ: root@postgres:/home/oleg# systemctl status memcached
 ● memcached.service - memcached daemon
      Loaded: loaded (/lib/systemd/system/memcached.service; enabled; preset: enabled)
      Active: active (running) since Mon 2025-03-03 22:11:37 MSK; 7s ago
@@ -50,4 +51,34 @@
 
 мар 03 22:11:37 postgres systemd[1]: Started memcached.service - memcached daemon.
 
-3. 
+3.  Задание 3 Ответ:
+
+oleg@postgres:~$ telnet localhost 11211
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+add oleg 0 20 5
+value
+STORED
+get oleg 0 5
+VALUE oleg 0 5
+value
+END
+get oleg
+END
+
+
+4. Задание 4 ответ:
+root@postgres:/home/oleg# redis-cli
+127.0.0.1:6379> set key1 value1
+OK
+127.0.0.1:6379> set key2 value2
+OK
+127.0.0.1:6379> set key3 value3
+OK
+127.0.0.1:6379> get key1
+"value1"
+127.0.0.1:6379> get key2
+"value2"
+127.0.0.1:6379> get key3
+"value3"
