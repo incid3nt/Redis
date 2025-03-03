@@ -54,6 +54,8 @@
 3.  Задание 3 Ответ:
 
 oleg@postgres:~$ telnet localhost 11211
+
+```
 Trying ::1...
 Connected to localhost.
 Escape character is '^]'.
@@ -66,9 +68,10 @@ value
 END
 get oleg
 END
-
+```
 
 4. Задание 4 ответ:
+```
 root@postgres:/home/oleg# redis-cli
 127.0.0.1:6379> set key1 value1
 OK
@@ -82,3 +85,4 @@ OK
 "value2"
 127.0.0.1:6379> get key3
 "value3"
+```
